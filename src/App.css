@@ -1,38 +1,469 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "Haas";
+  src: url("./assets/font/NHaasGroteskTXPro-55Rg.woff") format("woff"),
+    url("./assets/font/NHaasGroteskTXPro-65Md.woff") format("woff"),
+    url("./assets/font/NHaasGroteskTXPro-75Bd.woff") format("woff");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: "Haas", ui-serif, Georgia, Times, serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+header {
+  position: absolute;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  height: 62px;
+  box-sizing: border-box;
+  padding: 16px;
+  z-index: 6;
 }
 
-.App-link {
-  color: #61dafb;
+.header-inner {
+  max-width: 1272px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.header-inner ul {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  list-style-type: none;
+  flex: 2;
+  font-weight: 600;
+}
+
+.header-inner ul li {
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+header .button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .button-container button {
+  background: linear-gradient(
+    90deg,
+    #46a273 -0.2%,
+    #46a273 0.36%,
+    #133641 100.2%
+  );
+  width: 86px;
+  height: 35px;
+  font-size: 12px;
+  padding: 10px;
+  margin-right: 10px;
+  color: #fff;
+  border-radius: 0.25rem;
+  border: none;
+}
+
+.menu-icon {
+  display: none;
+}
+
+#main-container {
+  position: relative;
+  height: fit-content;
+}
+
+#bg-container {
+  height: auto;
+}
+
+#bg-img {
+  position: relative;
+  width: 100vw;
+}
+
+.bg-img-mid,
+.bg-img-top,
+.bg-over-light {
+  position: absolute;
+  width: 100vw;
+  left: 0;
+  top: 0;
+}
+#bg-img {
+  z-index: 1;
+}
+
+.bg-img-mid {
+  z-index: 3;
+}
+
+.bg-img-top {
+  z-index: 4;
+}
+
+.bg-over-light {
+  z-index: 5;
+}
+
+#coin-container {
+  width: 94vw;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 270px;
+  max-height: 270px; */
+  z-index: 2;
+  top: 30vw;
+  margin-left: 6vw;
+}
+
+#coin {
+  height: 15.06vw;
+  width: 15.06vw;
+  background-image: url("./assets/images/img65.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin: 0 auto;
+}
+
+.hotem-features {
+  position: relative;
+  height: 848px;
+  width: 1272px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.dividends {
+  width: 882px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 40px;
+}
+
+.dividend-heading {
+  font-size: 34px;
+  font-weight: 600;
+}
+
+.dividend-word {
+  margin-left: 10px;
+  color: #179c64;
+}
+
+.dividend-btn {
+  background: transparent;
+  outline: none;
+  border: none;
+  height: 48px;
+  overflow: hidden;
+  border-radius: 7px;
+  font-size: 18px;
+  width: 189px;
+  color: #fff;
+  background-image: url("./assets/images/dividend-btn.svg");
+  background-size: auto;
+}
+
+.dividend-feature {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  /* margin: 0 auto; */
+}
+
+.div-feature-top {
+  font-size: 40px;
+
+  margin-top: 100px;
+  margin-bottom: 48px;
+}
+
+.div-feature-top h2 {
+  color: #3555f7;
+  font-size: 40px;
+}
+.div-feature-top span {
+  color: #000;
+}
+
+#div-feature-btm {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-image: url("./assets/images/indicators-web.svg");
+  background-repeat: no-repeat;
+  background-position: 41% 5%;
+  flex: 1;
+}
+
+.left-feature,
+.right-feature {
+  width: 320px;
+}
+
+.right-feature {
+  padding-left: 10px;
+}
+
+.left-feature span,
+.right-feature span {
+  font-size: 32px;
+}
+
+.left-feature p,
+.right-feature p {
+  margin-top: 24px;
+  font-size: 16px;
+}
+
+.left-feature div:last-child {
+  margin-top: 145px;
+}
+
+.understanding-container {
+  height: 780px;
+  width: 100%;
+  background: linear-gradient(
+    100.1deg,
+    #132878 -3.95%,
+    #03192f 21.83%,
+    #021326 98.76%,
+    #00460f 103.65%
+  );
+}
+
+.understanding {
+  height: 604px;
+  width: 1272px;
+  margin: 96px auto;
+}
+
+.understanding h2 {
+  font-size: 40px;
+  color: #fff;
+  margin: 0;
+  margin-bottom: 4rem;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+}
+
+.card-container .card-deatils {
+  width: 30%;
+  height: 490px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-container .card-deatils p {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin: 0;
+}
+.card-container a {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #3555f7;
+}
+.card-btm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 190px;
+}
+
+.partner-container {
+  height: 1119px;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 1279px) {
+  #coin {
+    width: 18.51vw;
+    height: 18.51vw;
   }
-  to {
-    transform: rotate(360deg);
+  #div-feature-btm {
+    background-image: url("./assets/images/indicators-mid.svg");
+  }
+
+  .hotem-features {
+    width: calc(100% - 2rem);
+    margin: 0;
+    padding: 0 1rem;
+  }
+  .understanding {
+    width: calc(100% -2rem);
+    padding: 0 1rem;
+    margin: auto;
+  }
+
+  .right-feature {
+    width: 240px;
+  }
+
+  .understanding {
+    height: 604px;
+    width: calc(100% - 2rem);
+    margin: 96px 0;
+    padding: 0 1rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .div-feature-top h2 {
+    font-size: 1.875rem;
+    text-align: center;
+    position: relative;
+    top: 250px;
+    width: 288px;
+    margin: 0 auto;
+  }
+
+  .dividends {
+    width: 282.59px;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    bottom: 200px;
+  }
+
+  .dividend-heading {
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .dividend-description {
+    width: 262px;
+    font-size: 1rem;
+    margin: 0 auto 20px;
+  }
+
+  #div-feature-btm {
+    background-image: url("./assets/images/indicators.svg");
+    background-position: 50% 5%;
+    background-size: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .left-feature,
+  .right-feature {
+    width: 295px;
+    margin-bottom: 30px;
+    margin-top: 50px;
+  }
+
+  .hotem-features {
+    height: 1597.05px;
+    flex-direction: column-reverse;
+  }
+
+  .left-feature div:last-child {
+    margin-top: 60px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .understanding-container,
+  .understanding {
+    height: auto;
+  }
+
+  .understanding h2 {
+    text-align: center;
+  }
+
+  .card-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-container .card-deatils {
+    width: 347.5px;
+    height: 420px;
+    margin-bottom: 30px;
+  }
+
+  .card-container .card-deatils h3 {
+    margin: 12px 0 6px 0;
+  }
+}
+
+@media only screen and (max-width: 712px) {
+  .menu-icon {
+    display: contents;
+  }
+
+  .menu-icon svg {
+    height: 20px;
+    top: 1px;
+    position: relative;
+  }
+
+  header .button-container button {
+    width: 86px;
+    height: 27px;
+    font-size: 12px;
+    padding: 7px;
+  }
+
+  .app-btn {
+    display: none;
+  }
+
+  .header-inner ul {
+    display: none;
+  }
+
+  .header-inner img {
+    width: 97.5px;
+    height: 32.5px;
+  }
+
+  .left-feature,
+  .right-feature {
+    margin-bottom: 75px;
+    margin-top: 5px;
+    width: 295px;
+  }
+
+  .div-feature-top {
+    margin-top: 0px;
   }
 }
