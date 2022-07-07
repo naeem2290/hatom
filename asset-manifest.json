@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/hatom/static/css/main.cd9c4e01.css",
-    "main.js": "/hatom/static/js/main.1bbbe417.js",
-    "static/js/787.26c5c3fe.chunk.js": "/hatom/static/js/787.26c5c3fe.chunk.js",
+    "main.js": "/hatom/static/js/main.ac266565.js",
+    "static/js/787.1e8c3623.chunk.js": "/hatom/static/js/787.1e8c3623.chunk.js",
     "static/media/bg.svg": "/hatom/static/media/bg.17ce9ea353e21689cd94250cf17d1864.svg",
     "static/media/logoSquare.png": "/hatom/static/media/logoSquare.90aca42f1f0114edf8ee.png",
     "static/media/img34.svg": "/hatom/static/media/img34.8cc4f6062716fc9623ce0d37647e927e.svg",
@@ -32,11 +32,11 @@
     "index.html": "/hatom/index.html",
     "static/media/close.svg": "/hatom/static/media/close.b51a4aeb59a24a1f95b656e19bb44e7e.svg",
     "main.cd9c4e01.css.map": "/hatom/static/css/main.cd9c4e01.css.map",
-    "main.1bbbe417.js.map": "/hatom/static/js/main.1bbbe417.js.map",
-    "787.26c5c3fe.chunk.js.map": "/hatom/static/js/787.26c5c3fe.chunk.js.map"
+    "main.ac266565.js.map": "/hatom/static/js/main.ac266565.js.map",
+    "787.1e8c3623.chunk.js.map": "/hatom/static/js/787.1e8c3623.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cd9c4e01.css",
-    "static/js/main.1bbbe417.js"
+    "static/js/main.ac266565.js"
   ]
 }
