@@ -6,11 +6,11 @@
   "display": "standalone",
   "scope": "/",
   "start_url": ".",
-  "description": "It's a test PWA",
+  "description": "Hatom Clone",
   "orientation": "any",
   "icons": [
     {
-      "src": "/icon.png",
+      "src": "./icon.png",
       "type": "image/png",
       "sizes": "512x512"
     }
