@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/hatom/static/css/main.cd9c4e01.css",
+    "main.js": "/hatom/static/js/main.ae18a1c8.js",
+    "static/js/787.1e8c3623.chunk.js": "/hatom/static/js/787.1e8c3623.chunk.js",
+    "static/media/bg.svg": "/hatom/static/media/bg.17ce9ea353e21689cd94250cf17d1864.svg",
+    "static/media/logoSquare.png": "/hatom/static/media/logoSquare.90aca42f1f0114edf8ee.png",
+    "static/media/img34.svg": "/hatom/static/media/img34.8cc4f6062716fc9623ce0d37647e927e.svg",
+    "static/media/img35.svg": "/hatom/static/media/img35.56ee1829966c8fb2a0f7c9af2ae19670.svg",
+    "static/media/bg-mid.svg": "/hatom/static/media/bg-mid.c08a479c0005c155fa027c31feda99c6.svg",
+    "static/media/img33.svg": "/hatom/static/media/img33.66a4f2bea590e7f48103b822fa3263b3.svg",
+    "static/media/img65.png": "/hatom/static/media/img65.381a6a3c9bfd596cb1b1.png",
+    "static/media/bgMobile.png": "/hatom/static/media/bgMobile.c51da9ff809e95400b96.png",
+    "static/media/scientists.svg": "/hatom/static/media/scientists.c0e971bdc45deaff7cdf449667167847.svg",
+    "static/media/bubbleMobile.svg": "/hatom/static/media/bubbleMobile.9c16b4202afd55c21fb4aa8fac3ea69d.svg",
+    "static/media/NHaasGroteskTXPro-65Md.woff": "/hatom/static/media/NHaasGroteskTXPro-65Md.759f970bccd4dfe68e71.woff",
+    "static/media/NHaasGroteskTXPro-55Rg.woff": "/hatom/static/media/NHaasGroteskTXPro-55Rg.e4ef6055da584ba7f221.woff",
+    "static/media/NHaasGroteskTXPro-75Bd.woff": "/hatom/static/media/NHaasGroteskTXPro-75Bd.ee110a2a089ad336af84.woff",
+    "static/media/overMobile.svg": "/hatom/static/media/overMobile.a731f9dec3f80cb56307ba3179e548a4.svg",
+    "static/media/over-light.svg": "/hatom/static/media/over-light.4e9e207b09af83e7a486a69d0c75fdc8.svg",
+    "static/media/heading.svg": "/hatom/static/media/heading.f557497c51e96aae9113016b3febef74.svg",
+    "static/media/logo.svg": "/hatom/static/media/logo.f2b719d35882ef06a570d98141717260.svg",
+    "static/media/dividend-btn.svg": "/hatom/static/media/dividend-btn.29a7e22ddbb4fce59a4f.svg",
+    "static/media/elrond.svg": "/hatom/static/media/elrond.de62f838fd8b3ea88cdab527cb24e445.svg",
+    "static/media/eng.svg": "/hatom/static/media/eng.91b517a62ca23ae2da50a9ad54450270.svg",
+    "static/media/arrow.svg": "/hatom/static/media/arrow.6c15bf6056748d5dce5101d254cf92d9.svg",
+    "static/media/app.svg": "/hatom/static/media/app.3976b24259871f785b7e.svg",
+    "static/media/footerBtn.svg": "/hatom/static/media/footerBtn.8ab6debf273071b012b8.svg",
+    "index.html": "/hatom/index.html",
+    "static/media/indicators.svg": "/hatom/static/media/indicators.5cbef11bfe8484c454ce.svg",
+    "static/media/indicators-web.svg": "/hatom/static/media/indicators-web.ba1bb51c9d7058888c2f.svg",
+    "static/media/indicators-mid.svg": "/hatom/static/media/indicators-mid.d03675741312751fdb53.svg",
+    "static/media/close.svg": "/hatom/static/media/close.b51a4aeb59a24a1f95b656e19bb44e7e.svg",
+    "main.cd9c4e01.css.map": "/hatom/static/css/main.cd9c4e01.css.map",
+    "main.ae18a1c8.js.map": "/hatom/static/js/main.ae18a1c8.js.map",
+    "787.1e8c3623.chunk.js.map": "/hatom/static/js/787.1e8c3623.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cd9c4e01.css",
+    "static/js/main.ae18a1c8.js"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Hatom-Clone",
+  "short_name": "Hatom",
+  "theme_color": "#ffcbe4",
+  "background_color": "#fa99ca",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": ".",
+  "description": "It's a test PWA",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
