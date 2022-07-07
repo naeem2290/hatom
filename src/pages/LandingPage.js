@@ -1,15 +1,17 @@
 import React from "react";
 
-import Background from "../components/Background";
-import Understanding from "../components/Understanding";
-import Partner from "../components/Patners";
+import Background from "../components/LandingPage/Background";
+import Understanding from "../components/LandingPage/Understanding";
+import Partners from "../components/LandingPage/Partners";
+import Subscribe from "../components/LandingPage/Subscribe";
 
 export default function LandingPage() {
   return (
     <>
       <Background />
       <Understanding />
-      {/* <Partner /> */}
+      {/* <Partners /> */}
+      <Subscribe />
     </>
   );
 }

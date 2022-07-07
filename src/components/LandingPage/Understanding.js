@@ -1,9 +1,9 @@
 import React from "react";
 
-import Img33 from "../assets/images/img33.svg";
-import Img34 from "../assets/images/img34.svg";
-import Img35 from "../assets/images/img35.svg";
-import Arrow from "../assets/images/arrow.svg";
+import Img33 from "../../assets/images/img33.svg";
+import Img34 from "../../assets/images/img34.svg";
+import Img35 from "../../assets/images/img35.svg";
+import Arrow from "../../assets/images/arrow.svg";
 
 const data = [
   {

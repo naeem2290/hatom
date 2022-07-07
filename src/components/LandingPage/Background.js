@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from "react";
+import { useMediaPredicate } from "react-media-hook";
 
-import BgImg from "../assets/images/bg.svg";
-import BgMidImg from "../assets/images/bg-mid.svg";
-import BgTopImg from "../assets/images/scientists.svg";
-import OverLight from "../assets/images/over-light.svg";
+import Heading from "../../assets/images/heading.svg";
+import BgImg from "../../assets/images/bg.svg";
+import BgMobile from "../../assets/images/bgMobile.png";
+import BgMidImg from "../../assets/images/bg-mid.svg";
+import BubblesMobile from "../../assets/images/bubbleMobile.svg";
+import BgTopImg from "../../assets/images/scientists.svg";
+import OverLight from "../../assets/images/over-light.svg";
+import OverMobile from "../../assets/images/overMobile.svg";
 import Coin from "./Coin";
 
 const topPosition = () => {
   const coin = document.getElementById("coin-container");
   let coinRect = coin.getBoundingClientRect();
   let coinTop = coinRect.top + window.scrollY;
-  return coinTop + coin.scrollTop;
+  return coinTop + coin.scrollTop + 50;
 };
 
 const bottomPosition = () => {
@@ -22,12 +27,14 @@ const bottomPosition = () => {
 
 export default function Background() {
   const [state, setState] = useState(false);
+  const media = useMediaPredicate("(max-width: 640px)");
   const [transform, setTransform] = useState("99.6%");
   const [coinStyle, setCoinStyle] = useState({
-    top: "30vw",
+    top: window.innerWidth > 640 ? "30vw" : "80vw",
     position: "fixed",
     condition: true,
   });
+  let innerState = {};
 
   const coinPosition = () => {
     let top = topPosition();
@@ -60,12 +67,16 @@ export default function Background() {
     ];
 
     scrollValues = scrollValues.reverse();
-    if (window.innerWidth < 1025) {
-      bottom = bottom * 0.9;
+    if (window.innerWidth < 500) {
+      bottom = bottom * 1;
+    } else if (window.innerWidth < 1025) {
+      bottom = bottom * 0.95;
     } else {
-      bottom = bottom * 1.03;
+      bottom = bottom * 1.08;
     }
+
     let value = (bottom - top) / scrollValues.length;
+    let media = window.innerWidth < 640;
 
     for (let i = 0; i < scrollValues.length; i++) {
       if (i === 0) {
@@ -75,39 +86,63 @@ export default function Background() {
       scrollValues[i].valueB = scrollValues[i].valueA + value;
     }
 
-    let state = { top, bottom, scrollValues };
+    innerState = { top, bottom, scrollValues, media };
 
-    window.addEventListener("scroll", () => {
-      let scrollHeight = window.pageYOffset;
-      let height = scrollHeight + state.top;
+    if (media && !coinStyle.condition && coinStyle.position !== "absolute") {
+      setCoinStyle({
+        ...coinStyle,
+        top: "80vw",
+        position: "fixed",
+        condition: true,
+      });
+      setTransform("99.6%");
+    } else if (
+      !media &&
+      !coinStyle.condition &&
+      coinStyle.position !== "absolute"
+    ) {
+      setCoinStyle({
+        ...coinStyle,
+        top: "30vw",
+        position: "fixed",
+        condition: true,
+      });
+      setTransform("99.6%");
+    }
+    scroll();
+  };
 
-      if (!coinStyle.condition || height < state.bottom) {
-        setCoinStyle({
-          ...coinStyle,
-          top: "30vw",
-          position: "fixed",
-          condition: true,
-        });
-      } else if (height > state.bottom) {
-        setCoinStyle({
-          ...coinStyle,
-          position: "absolute",
-          top: state.bottom - state.top + "px",
-          condition: false,
-        });
-        setTransform("0%");
+  const scroll = () => {
+    let state = innerState;
+    let scrollHeight = window.pageYOffset;
+    let height = scrollHeight + state.top;
+
+    if (!coinStyle.condition || height < state.bottom) {
+      setCoinStyle({
+        ...coinStyle,
+        top: !state.media ? "30vw" : "80vw",
+        position: "fixed",
+        condition: true,
+      });
+    } else if (height > state.bottom) {
+      setCoinStyle({
+        ...coinStyle,
+        position: "absolute",
+        top: state.bottom - state.top + "px",
+        condition: false,
+      });
+      setTransform("0%");
+    }
+
+    for (let i = 0; i < state.scrollValues.length; i++) {
+      if (
+        height > state.scrollValues[i].valueA &&
+        height < state.scrollValues[i].valueB
+      ) {
+        setTransform(state.scrollValues[i].transform);
+        break;
       }
-
-      for (let i = 0; i < state.scrollValues.length; i++) {
-        if (
-          height > state.scrollValues[i].valueA &&
-          height < state.scrollValues[i].valueB
-        ) {
-          setTransform(state.scrollValues[i].transform);
-          break;
-        }
-      }
-    });
+    }
   };
 
   useEffect(() => {
@@ -115,10 +150,18 @@ export default function Background() {
       window.scrollTo(0, 0);
       coinPosition();
       window.addEventListener("resize", coinPosition);
+      window.addEventListener("scroll", scroll);
+    } else if (!state) {
+      window.scrollTo(0, 0);
+      coinPosition();
+      window.removeEventListener("resize", coinPosition);
+      window.removeEventListener("scroll", scroll);
+      setState(true);
     }
 
     return () => {
       window.removeEventListener("resize", coinPosition);
+      window.removeEventListener("scroll", scroll);
     };
   }, [state]);
 
@@ -127,15 +170,27 @@ export default function Background() {
       <div id="bg-container">
         <img
           onLoad={() => {
-            setState(true);
+            setState(!state);
           }}
           id="bg-img"
-          src={BgImg}
+          src={!media ? BgImg : BgMobile}
           alt="bg-img"
         />
-        <img className="bg-img-mid" src={BgMidImg} alt="bg-mid" />
-        <img className="bg-img-top" src={BgTopImg} alt="bg-top" />
-        <img className="bg-over-light" src={OverLight} alt="overLight" />
+        {!media && <img className="bg-img-mid" src={BgMidImg} alt="bg-mid" />}
+        <img
+          className="bg-img-top"
+          src={!media ? BgTopImg : BubblesMobile}
+          alt="bg-top"
+        />
+        <img
+          className="bg-over-light"
+          src={!media ? OverLight : OverMobile}
+          alt="overLight"
+        />
+      </div>
+      <div className="heading-container">
+        <img src={Heading} alt="heading" />
+        <div>Deep dive into the heart of Hatom Protocol</div>
       </div>
       <div id="coin-container">
         <Coin transform={transform} coinStyle={coinStyle} />

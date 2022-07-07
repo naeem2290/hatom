@@ -45,15 +45,15 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <script>
-      var sw = window.innerWidth;
+      // var sw = window.innerWidth;
 
-      if (sw <= 768) {
-        var mvp = document.getElementById("testViewport");
-        mvp.setAttribute("content", "width=1024");
-      } else {
-        var mvp = document.getElementById("testViewport");
-        mvp.setAttribute("content", "width=device-width, initial-scale=1");
-      }
+      // if (sw <= 768) {
+      //   var mvp = document.getElementById("testViewport");
+      //   mvp.setAttribute("content", "width=1024");
+      // } else {
+      //   var mvp = document.getElementById("testViewport");
+      //   mvp.setAttribute("content", "width=device-width, initial-scale=1");
+      // }
 
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", function () {
